@@ -4,10 +4,12 @@ task :gen_docs  do
   update_examples_view
 end
 
-task :default => [:something]
+task :default => [:build]
 
-task :something do
-    puts "something is happening"
+task :build do
+    puts "Doing the Build"
+    rackup
+    'ruby tests/login_test.rb
 end
 
 desc 'Pushes tags and code to master, develop, and heroku'
