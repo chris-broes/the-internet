@@ -5,8 +5,8 @@ env:
   global:
     - secure: G7yT7Q+TOhPrCZU9F+MJ7juFrNEBC+TfA2AGrDmND+9Qp0HnibGMqHub8wJ5UeWPB0BgiE2ki0SUcKf+bBQiRbxFqY7TuPUhDXEoIE1nyHgSVrSJxCpBSbjSSUmCccKAepbfC2/P/MD9kCoqk2xqCziMHkejlngQx0nOaR6D5S8=
     - secure: eQsXR6ZB6ZGz3phNekZQS3Aa/UjuIIvfCy/DPrNduegaHMVNS9Jvrm/+4bPQ3JbzdWYg6kk+XHq4VACarap+zJGFCBBwtFfpCL0bzvcjiWK9mfb/yDBak6BSFASairRDObqEV9CGrj3y3iJhsX4VU/fuC5ia56Qnl6n6Kbupif0=
-script: ruby tests/login_test.rb
-# before_script:
+before_script: cd tests
+script: ruby login_test.rb
 #   # - bundle exec rake generate_ci_test_config
 #   - bundle exec rackup &    # start a Web server
 #   - sleep 3                 # give Web server some time to bind to sockets, etc
