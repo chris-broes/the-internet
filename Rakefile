@@ -4,6 +4,12 @@ task :gen_docs  do
   update_examples_view
 end
 
+task :default => [:something]
+
+task :something do
+    puts "something is happening"
+end
+
 desc 'Pushes tags and code to master, develop, and heroku'
 task :release do
   `git push origin master ; git push origin develop ; git push --tags ; git push heroku master`

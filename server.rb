@@ -215,7 +215,7 @@ get '/login' do
 end
 
 post "/authenticate" do
-  username = 'chrisbroes'
+  username = 'tomsmith'
   password = 'SuperSecretPassword!'
 
   if username == params[:username]
@@ -305,7 +305,7 @@ If this were a real message, you would likely see a link or some relevant text t
 
 If you want to test login, visit http://the-internet.herokuapp.com/login and use the following credentials:
 
-username: chrisbroes
+username: tomsmith
 password: SuperSecretPassword!",
     via:      'smtp',
     via_options: {
