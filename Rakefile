@@ -9,7 +9,7 @@ task :default => [:build]
 task :build do
     puts "Doing the Build"
     rackup
-    'ruby tests/login_test.rb
+    ruby tests/login_test.rb
 end
 
 desc 'Pushes tags and code to master, develop, and heroku'
