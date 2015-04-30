@@ -8,7 +8,6 @@ task :default => [:build]
 
 task :build do
     puts "Doing the Build"
-    rackup
     ruby tests/login_test.rb
 end
 
