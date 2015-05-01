@@ -1,7 +1,3 @@
-require 'rubygems'
-require 'peach'
-require 'selenium-webdriver'
-
 caps1 = Selenium::WebDriver::Remote::Capabilities.safari
 caps1['platform'] = 'OS X 10.9'
 caps1['version'] = '7.0'
