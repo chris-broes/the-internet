@@ -1,4 +1,5 @@
 require 'selenium-webdriver'
+require 'peach'
 
 caps1 = Selenium::WebDriver::Remote::Capabilities.safari
 caps1['platform'] = 'OS X 10.9'
