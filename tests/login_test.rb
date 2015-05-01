@@ -26,7 +26,7 @@ caps4["name"] = "Selenium with Sauce on IE 11"
 
 caps = [caps1, caps2, caps3, caps4]
 
-caps do |cap|
+caps.peach do |cap|
   # In order to connect to Sauce Labs you will need your Sauce Labs username and access key.
   # Your username and access key can be found here https://saucelabs.com/account
   driver = Selenium::WebDriver.for(:remote,
