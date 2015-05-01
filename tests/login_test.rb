@@ -1,5 +1,5 @@
-require 'selenium-webdriver'
 require 'peach'
+require 'selenium-webdriver'
 
 caps1 = Selenium::WebDriver::Remote::Capabilities.safari
 caps1['platform'] = 'OS X 10.9'
@@ -41,7 +41,6 @@ caps.peach do |cap|
   #element = driver.find_element(:id, 'gbqfb').click
 	element.submit
 	puts "Page header is: #{driver.title}"
-  driver.findElement(:id, 'flash')
   driver.quit
             
           #  if (!driver.findElement(By.tagName("html")).getText().contains("Secure Area")) {
