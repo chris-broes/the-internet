@@ -10,7 +10,7 @@ env:
 # before_script: cd tests
 script: 
       - echo hello
-      - bundle exec rake generate_ci_test_config
+#      - bundle exec rake generate_ci_test_config
       - bundle exec rackup     # start a Web server
       - echo here
       - sleep 3                # give Web server some time to bind to sockets, etc
