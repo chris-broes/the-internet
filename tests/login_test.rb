@@ -31,7 +31,7 @@ caps.peach do |cap|
   # Your username and access key can be found here https://saucelabs.com/account
   driver = Selenium::WebDriver.for(:remote,
                                    :url => "http://" + ENV['SAUCE_USERNAME'] + ":" +  ENV['SAUCE_ACCESS_KEY'] + "@ondemand.saucelabs.com:80/wd/hub",
-                                   :desired_capabilities => caps)
+                                   :desired_capabilities => cap)
 
   driver.navigate.to "http://0.0.0.0:9292/login"
   element = driver.find_element(:id, 'username')
