@@ -5,7 +5,7 @@ caps1 = Selenium::WebDriver::Remote::Capabilities.safari
 caps1['platform'] = 'OS X 10.9'
 caps1['version'] = '7.0'
 caps1["name"] = "Selenium with Sauce on Safari"
-#caps1["tunnelIdentifier"] = "TRAVIS_BUILD_ID" 
+caps1["tunnelIdentifier"] = "35.1" 
 
 
 caps2 = Selenium::WebDriver::Remote::Capabilities.new
@@ -13,21 +13,21 @@ caps2["browserName"] = "Chrome"
 caps2["version"] = "27"
 caps2["platform"] = "Linux"
 caps2["name"] = "Selenium with Sauce on Chrome"
-#caps2["tunnelIdentifier"] = "TRAVIS_BUILD_ID"
+caps2["tunnelIdentifier"] = "35.1"
 
 caps3 = Selenium::WebDriver::Remote::Capabilities.new
 caps3["browserName"] = "Firefox"
 caps3["version"] = "35.0"
 caps3["platform"] = "OS X 10.10"
 caps3["name"] = "Selenium with Sauce on Firefox"
-#caps3["tunnelIdentifier"] = "TRAVIS_BUILD_ID"
+caps3["tunnelIdentifier"] = "35.1"
 
 caps4 = Selenium::WebDriver::Remote::Capabilities.new
 caps4["browserName"] = "Internet Explorer"
 caps4["platform"] = 'Windows 8.1'
 caps4["version"] = '11.0'
 caps4["name"] = "Selenium with Sauce on IE 11"
-#caps4["tunnelIdentifier"] = "TRAVIS_BUILD_ID"
+caps4["tunnelIdentifier"] = "35.1"
 
 caps = [caps1, caps2, caps3, caps4]
 
