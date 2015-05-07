@@ -1,11 +1,12 @@
 require 'peach'
 require 'selenium-webdriver'
+require 'rest-client'
 
 caps1 = Selenium::WebDriver::Remote::Capabilities.safari
 caps1['platform'] = 'OS X 10.9'
 caps1['version'] = '7.0'
 caps1["name"] = "Selenium with Sauce on Safari"
-#caps1["tunnelIdentifier"] = "35.1" 
+#caps1["tunnelIdentifier"] = "35.1"
 
 
 caps2 = Selenium::WebDriver::Remote::Capabilities.new
@@ -38,7 +39,7 @@ caps.peach do |cap|
                                    :url => "http://" + ENV['SAUCE_USERNAME'] + ":" +  ENV['SAUCE_ACCESS_KEY'] + "@ondemand.saucelabs.com:80/wd/hub",
                                    :desired_capabilities => cap)
 
-  driver.navigate.to "http://0.0.0.0:9292/login"
+  driver.navigate.to "http://localhost:9292/login"
   element = driver.find_element(:id, 'username')
   element.send_keys "tomsmith"
   element = driver.find_element(:id, 'password')
@@ -47,6 +48,24 @@ caps.peach do |cap|
   element.submit
   puts "Page header is: #{driver.title}"
   driver.quit
+
+  job_id = driver.session_id
+
+  http = "https://saucelabs.com/rest/v1/" + ENV['SAUCE_USERNAME'] + "/jobs/#{job_id}"
+
+  body = {"passed" => true}.to_json
+
+  RestClient::Request.execute(
+    :method => :put,
+    :url => http,
+    :user => ENV['SAUCE_USERNAME'],
+    :password => ENV['SAUCE_ACCESS_KEY'],
+    :headers => {:content_type => "application/json"},
+    :payload => body
+  )
+
+  puts "The test has #{body}, and the results are available here \n https://saucelabs.com/rest/v1/" + ENV['SAUCE_USERNAME'] + "/jobs/#{job_id}"
+
 
   #  if (!driver.findElement(By.tagName("html")).getText().contains("Secure Area")) {
   #     System.out.println("verifyTextPresent failed");
