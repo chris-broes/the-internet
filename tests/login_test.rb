@@ -39,12 +39,13 @@ caps.peach do |cap|
                                    :url => "http://" + ENV['SAUCE_USERNAME'] + ":" +  ENV['SAUCE_ACCESS_KEY'] + "@ondemand.saucelabs.com:80/wd/hub",
                                    :desired_capabilities => cap)
 
+  wait = Selenium::WebDriver::Wait.new(:timeout => 10)
   driver.navigate.to "http://localhost:9292/login"
 
   element = driver.find_element(:id, 'username')
   
-  wait.until  { elem }
-  
+  wait.until  { element }
+
   element.send_keys "tomsmith"
   element = driver.find_element(:id, 'password')
   element.send_keys "SuperSecretPassword!"
