@@ -39,7 +39,7 @@ caps.peach do |cap|
                                    :url => "http://" + ENV['SAUCE_USERNAME'] + ":" +  ENV['SAUCE_ACCESS_KEY'] + "@ondemand.saucelabs.com:80/wd/hub",
                                    :desired_capabilities => cap)
 
-  driver.navigate.to "http://the-internet.herokuapp.com/login"
+  driver.navigate.to "http://localhost:9292/login"
   element = driver.find_element(:id, 'username')
   element.send_keys "tomsmith"
   element = driver.find_element(:id, 'password')
@@ -47,13 +47,18 @@ caps.peach do |cap|
   #element = driver.find_element(:id, 'gbqfb').click
   element.submit
   puts "Page header is: #{driver.title}"
+  if not driver.find_element(:id, 'flash').text.include? 'secure area'
+    body = {"passed" => false}.to_json
+  else
+    body = {"passed" => true}.to_json
+  end
   driver.quit
 
   job_id = driver.session_id
 
   http = "https://saucelabs.com/rest/v1/" + ENV['SAUCE_USERNAME'] + "/jobs/#{job_id}"
 
-  body = {"passed" => true}.to_json
+  
 
   RestClient::Request.execute(
     :method => :put,
@@ -66,7 +71,4 @@ caps.peach do |cap|
 
   puts "The test has #{body}, and the results are available here \n https://saucelabs.com/rest/v1/" + ENV['SAUCE_USERNAME'] + "/jobs/#{job_id}"
 
-
-  #  if (!driver.findElement(By.tagName("html")).getText().contains("Secure Area")) {
-  #     System.out.println("verifyTextPresent failed");
 end
