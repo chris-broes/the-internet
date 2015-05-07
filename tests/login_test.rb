@@ -45,6 +45,7 @@ caps.peach do |cap|
   element = driver.find_element(:id, 'username')
   
   wait.until  { element }
+  
   element.send_keys "tomsmith"
   element = driver.find_element(:id, 'password')
   element.send_keys "SuperSecretPassword!"
