@@ -48,15 +48,17 @@ caps.peach do |cap|
   element.send_keys "tomsmith"
   element = driver.find_element(:id, 'password')
   element.send_keys "SuperSecretPassword!"
-  #element = driver.find_element(:id, 'gbqfb').click
   element.submit
+  
+  pageload = driver.find_element(:id, 'flash')
+  wait.until { pageload }
   puts "Page header is: #{driver.title}"
   if not driver.find_element(:id, 'flash').text.include? 'secure area'
     body = {"passed" => false}.to_json
-    puts "Login is a success!"
+    puts "Login has failed :("
   else
     body = {"passed" => true}.to_json
-    puts "Login has failed :("
+    puts "Login is a success!"
   end
   driver.quit
 
