@@ -40,7 +40,11 @@ caps.peach do |cap|
                                    :desired_capabilities => cap)
 
   driver.navigate.to "http://localhost:9292/login"
+
   element = driver.find_element(:id, 'username')
+  
+  wait.until  { elem }
+  
   element.send_keys "tomsmith"
   element = driver.find_element(:id, 'password')
   element.send_keys "SuperSecretPassword!"
