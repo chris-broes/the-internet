@@ -39,7 +39,7 @@ caps.peach do |cap|
                                    :url => "http://" + ENV['SAUCE_USERNAME'] + ":" +  ENV['SAUCE_ACCESS_KEY'] + "@ondemand.saucelabs.com:80/wd/hub",
                                    :desired_capabilities => cap)
 
-  driver.navigate.to "http://localhost:9292/login"
+  driver.navigate.to "http://the-internet.herokuapp.com/login"
   element = driver.find_element(:id, 'username')
   element.send_keys "tomsmith"
   element = driver.find_element(:id, 'password')
