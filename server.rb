@@ -221,7 +221,7 @@ post "/authenticate" do
   if username == params[:username]
     if password == params[:password]
       session[:username] = params[:username]
-      flash[:success] = 'You logged into a fuzzy area!'
+      flash[:success] = 'You logged into a secure area!'
       redirect '/secure'
     else
       flash[:error] = 'Your password is invalid!'
