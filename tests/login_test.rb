@@ -2,10 +2,10 @@ require 'peach'
 require 'selenium-webdriver'
 require 'rest-client'
 
-caps1 = Selenium::WebDriver::Remote::Capabilities.safari
-caps1['platform'] = 'OS X 10.9'
-caps1['version'] = '7.0'
-caps1["name"] = "Selenium with Sauce on Safari"
+caps1 = Selenium::WebDriver::Remote::Capabilities.internet_explorer
+caps1['platform'] = 'Windows 7'
+caps1['version'] = '9.0'
+caps1["name"] = "Selenium with Sauce on IE 9"
 #caps1["tunnelIdentifier"] = "35.1"
 
 
