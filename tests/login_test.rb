@@ -53,8 +53,10 @@ caps.peach do |cap|
   puts "Page header is: #{driver.title}"
   if not driver.find_element(:id, 'flash').text.include? 'secure area'
     body = {"passed" => false}.to_json
+    puts "Login is a success!"
   else
     body = {"passed" => true}.to_json
+    puts "Login has failed :("
   end
   driver.quit
 
