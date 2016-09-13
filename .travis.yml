@@ -3,21 +3,20 @@ rvm:
 - 2.2 
 env:
   global:
+#    - SAUCY: true
 
-  #    - SAUCY: true
-  #
-  #    # before_script: cd tests
-    script: 
-    #      - echo hello
-    #      - bundle exec rake generate_ci_test_config
-    #      - bundle exec rackup     # start a Web server
-    #      - echo here
-    #      - sleep 3                # give Web server some time to bind to sockets, etc
-          - cd tests
-                - ruby login_test.rb
-                addons:
-                  sauce_connect: true
-                   jwt:
-                   # notifications:
-                   #   hipchat: 2a07784c1aeed1b6efa332242d3fc3@Notifications
-                  #   email: false
+# before_script: cd tests
+script: 
+#      - echo hello
+#      - bundle exec rake generate_ci_test_config
+#      - bundle exec rackup     # start a Web server
+#      - echo here
+#      - sleep 3                # give Web server some time to bind to sockets, etc
+      - cd tests
+      - ruby login_test.rb
+addons:
+  sauce_connect: true
+  jwt:
+# notifications:
+#   hipchat: 2a07784c1aeed1b6efa332242d3fc3@Notifications
+#   email: false
