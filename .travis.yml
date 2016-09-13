@@ -1,23 +1,15 @@
 language: ruby
 rvm:
-- 2.2 
+- 2.2.2
 env:
-  global:
-#    - SAUCY: true
-
-# before_script: cd tests
-script: 
-#      - echo hello
-#      - bundle exec rake generate_ci_test_config
-#      - bundle exec rackup     # start a Web server
-#      - echo here
-#      - sleep 3                # give Web server some time to bind to sockets, etc
-      - cd tests
-      - bundle install
-      - ruby login_test.rb
+  global: 
+  matrix:
+  - secure: NxSCS+DBxGmV284t+IJ2S8OCsrcUd9X89JqPkNW8H6zWAay9PYFHVVhtdAAvzZMAuyPtSEp48QCP678Mc3WBEvvH49rPzVsfV60hlnPKDUggrOk7VwzF1E1JBVVlwfAJ20YERf3pxy0Nuw7LznKk27Rr8JGF3JHLm2hd6Vf4xMQ=
+  - secure: Qii0HGN3Ki7AYLyT4L7BED5w9wVHt7zHdePglONeTPrxSWTd3vM5CoQmPG4pW4pLzVVHdW84b/LEu1XFCLRBGqNhhglFQRvmm8P5eeRCZ9+B4+s451vn1iszx1zuM5BdTYhdeQsWiRaOTpvEKgvMb/cX70Dkw0V1Ia/ZbLUd/vw=
+script:
+- cd tests
+- bundle install
+- ruby login_test.rb
 addons:
   sauce_connect: true
-  jwt:
-# notifications:
-#   hipchat: 2a07784c1aeed1b6efa332242d3fc3@Notifications
-#   email: false
+  jwt: 
