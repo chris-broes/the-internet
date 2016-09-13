@@ -9,9 +9,9 @@ script:
 - bundle exec rackup &
 - cd tests
 - bundle install
-# - gem install peach
-# - gem install selenium-webdriver
-# - gem install rest-client
+- gem install peach
+- gem install selenium-webdriver
+- gem install rest-client
 - ruby login_test.rb
 addons:
   sauce_connect: true
