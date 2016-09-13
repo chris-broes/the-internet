@@ -39,7 +39,7 @@ caps.peach do |cap|
                                    :url => "http://" + ENV['SAUCE_USERNAME'] + ":" +  ENV['SAUCE_ACCESS_KEY'] + "@ondemand.saucelabs.com:80/wd/hub",
                                    :desired_capabilities => cap)
 
-  wait = Selenium::WebDriver::Wait.new(:timeout => 15)
+  wait = Selenium::WebDriver::Wait.new(:timeout => 5)
   driver.navigate.to "http://localhost:9292/login"
 
   element = driver.find_element(:id, 'username')
@@ -52,10 +52,10 @@ caps.peach do |cap|
   element.send_keys "SuperSecretPassword!"
   element.submit
   
-  pageload = driver.find_element(:id, 'flash')
+  pageload = driver.find_element(:id, 'flash-messages')
   wait.until { pageload }
   puts "Page header is: #{driver.title}"
-  if not driver.find_element(:id, 'flash').text.include? 'secure area'
+  if not driver.find_element(:id, 'flash-messages').text.include? 'secure area'
     body = {"passed" => false}.to_json
     puts "Login has failed :("
   else

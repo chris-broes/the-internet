@@ -1,0 +1,2 @@
+cd ~/development/the-internet/tests
+ruby login_test.rb

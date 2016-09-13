@@ -1,0 +1,5 @@
+./do_rackup &
+sleep 2s
+./do_sauce_connect &
+sleep 30s
+./do_the_internet
