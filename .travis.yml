@@ -9,6 +9,7 @@ env:
 script:
 - cd tests
 - bundle install
+- gem install peach
 - ruby login_test.rb
 addons:
   sauce_connect: true
