@@ -6,7 +6,7 @@ env:
       - secure: Qii0HGN3Ki7AYLyT4L7BED5w9wVHt7zHdePglONeTPrxSWTd3vM5CoQmPG4pW4pLzVVHdW84b/LEu1XFCLRBGqNhhglFQRvmm8P5eeRCZ9+B4+s451vn1iszx1zuM5BdTYhdeQsWiRaOTpvEKgvMb/cX70Dkw0V1Ia/ZbLUd/vw=
 script:
 - bundle install
-- bundle exec rackup
+- bundle exec rackup &
 - cd tests
 - bundle install
 - gem install peach
