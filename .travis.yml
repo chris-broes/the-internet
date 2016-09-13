@@ -3,7 +3,6 @@ rvm:
 - 2.3.1
 env:
   global: 
-      - secure: NxSCS+DBxGmV284t+IJ2S8OCsrcUd9X89JqPkNW8H6zWAay9PYFHVVhtdAAvzZMAuyPtSEp48QCP678Mc3WBEvvH49rPzVsfV60hlnPKDUggrOk7VwzF1E1JBVVlwfAJ20YERf3pxy0Nuw7LznKk27Rr8JGF3JHLm2hd6Vf4xMQ=
       - secure: Qii0HGN3Ki7AYLyT4L7BED5w9wVHt7zHdePglONeTPrxSWTd3vM5CoQmPG4pW4pLzVVHdW84b/LEu1XFCLRBGqNhhglFQRvmm8P5eeRCZ9+B4+s451vn1iszx1zuM5BdTYhdeQsWiRaOTpvEKgvMb/cX70Dkw0V1Ia/ZbLUd/vw=
 script:
 - bundle install
@@ -17,3 +16,4 @@ script:
 addons:
   sauce_connect: true
   jwt: 
+      - secure: NxSCS+DBxGmV284t+IJ2S8OCsrcUd9X89JqPkNW8H6zWAay9PYFHVVhtdAAvzZMAuyPtSEp48QCP678Mc3WBEvvH49rPzVsfV60hlnPKDUggrOk7VwzF1E1JBVVlwfAJ20YERf3pxy0Nuw7LznKk27Rr8JGF3JHLm2hd6Vf4xMQ=
