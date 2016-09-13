@@ -7,9 +7,6 @@ env:
 script:
 - bundle install
 - bundle exec rackup &
-- sleep 2s
-- curl http://localhost:9292
-- printenv
 - cd tests
 - bundle install
 - gem install peach
