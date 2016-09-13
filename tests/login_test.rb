@@ -40,7 +40,7 @@ caps.peach do |cap|
                                    :desired_capabilities => cap)
 
   wait = Selenium::WebDriver::Wait.new(:timeout => 5)
-  driver.navigate.to "http://localhost:9292/login"
+  driver.navigate.to "http://127.0.0.1:9292/login"
 
   element = driver.find_element(:id, 'username')
   
