@@ -12,15 +12,15 @@ caps1["build"] = ENV['TRAVIS_JOB_NUMBER']
 
 caps2 = Selenium::WebDriver::Remote::Capabilities.new
 caps2["browserName"] = "Chrome"
-caps2["version"] = "latest-1"
+caps2["version"] = "latest"
 caps2["platform"] = "Linux"
 caps2["name"] = "Selenium with Sauce on Chrome"
 caps2["tunnelIdentifier"] = ENV['TRAVIS_JOB_NUMBER']
 caps2["build"] = ENV['TRAVIS_JOB_NUMBER']
 
 caps3 = Selenium::WebDriver::Remote::Capabilities.new
-caps3["browserName"] = "Safari"
-caps3["version"] = "8"
+caps3["browserName"] = "Firefox"
+caps3["version"] = "latest"
 caps3["platform"] = "OS X 10.10"
 caps3["name"] = "Selenium with Sauce on Safari"
 caps3["tunnelIdentifier"] = ENV['TRAVIS_JOB_NUMBER']
