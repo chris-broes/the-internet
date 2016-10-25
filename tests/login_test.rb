@@ -12,7 +12,7 @@ caps1["build"] = ENV['TRAVIS_JOB_NUMBER']
 
 caps2 = Selenium::WebDriver::Remote::Capabilities.new
 caps2["browserName"] = "Chrome"
-caps2["version"] = "latest-1"
+caps2["version"] = "latest"
 caps2["platform"] = "Linux"
 caps2["name"] = "Selenium with Sauce on Chrome"
 caps2["tunnelIdentifier"] = ENV['TRAVIS_JOB_NUMBER']
